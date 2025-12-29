@@ -7,3 +7,4 @@ Integrante 3: Paredes Apaza, Jhospani Merlin
 Tecnologías utilizadas
 Git (control de versiones)
 GitHub (repositorio remoto)
+Java (editor de codigo)
