@@ -102,6 +102,17 @@ public class VentanaReserva extends JFrame {
         Cliente cliente = (Cliente) cbClientes.getSelectedItem();
         PaqueteTuristico paquete = (PaqueteTuristico) cbPaquetes.getSelectedItem();
 
+        int opcion = JOptionPane.showConfirmDialog(
+                this,
+                "¿Desea confirmar la reserva?",
+                "Confirmar",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (opcion != JOptionPane.YES_OPTION) {
+            return;
+        }
+
         Reserva reserva = new Reserva(
                 cliente,
                 paquete,
