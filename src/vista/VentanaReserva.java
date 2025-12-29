@@ -111,6 +111,7 @@ public class VentanaReserva extends JFrame {
 
         ReservaDAO dao = new ReservaDAO();
         dao.guardarReserva(reserva);
+        //prueba
 
         JOptionPane.showMessageDialog(this,
                 "✅ Reserva registrada correctamente\n\n" +
