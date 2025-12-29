@@ -64,9 +64,11 @@ public class VentanaReserva extends JFrame {
     private void cargarClientes() {
         ClienteDAO dao = new ClienteDAO();
         List<Cliente> lista = dao.listarClientes();
+
         if (lista.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay clientes registrados");
         }
+
         for (Cliente c : lista) {
             cbClientes.addItem(c);
         }
@@ -90,7 +92,7 @@ public class VentanaReserva extends JFrame {
     private void registrarReserva() {
 
         if (cbClientes.getSelectedItem() == null ||
-                cbPaquetes.getSelectedItem() == null) {
+            cbPaquetes.getSelectedItem() == null) {
 
             JOptionPane.showMessageDialog(this,
                     "Debe seleccionar cliente y paquete",
@@ -122,7 +124,6 @@ public class VentanaReserva extends JFrame {
 
         ReservaDAO dao = new ReservaDAO();
         dao.guardarReserva(reserva);
-        //prueba
 
         JOptionPane.showMessageDialog(this,
                 "✅ Reserva registrada correctamente\n\n" +
@@ -130,5 +131,8 @@ public class VentanaReserva extends JFrame {
                         "Paquete: " + paquete.getNombre() + "\n" +
                         "Total: S/ " + paquete.getPrecio()
         );
+
+        // ✅ MEJORA SIMPLE DE UX
+        dispose();
     }
 }
